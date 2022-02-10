@@ -20,19 +20,28 @@ class Task_Motor_Controller:
              @param  gain_share    Share variable for proportional gain value.
              @param  set_point_share   Share variable for setpoint value.
              @param  ENA_pin            Enable pin object for the motor.
-             @param  In1A_pin       Control pin 1 associated with motor.
-             @param  In2A_pin       Control pin 2 associated with motor.
+             @param  In1_pin       Control pin 1 associated with motor.
+             @param  In2_pin       Control pin 2 associated with motor.
              @param  Timer          Timer object for motor.
         '''
         # Define shares for motor and encoder 1
+
+        ## @brief   Passes the present value from the encoder
         self.encoder_share = encoder_share
+        ## @brief   Share variable for proportional gain value.
         self.gain_share = gain_share
+        ## @brief   Share variable for setpoint value.
         self.set_point_share = set_point_share
         
         # Define motor-related pin objects
+
+        ## @brief   Enable pin object for the motor.
         self.ENA = ENA_pin
+        ## @brief   Control pin 1 associated with motor.
         self.IN1A_pin = In1_pin
+        ## @brief   Control pin 2 associated with motor.
         self.IN2A_pin = In2_pin
+        ## @brief   Timer object for motor.
         self.tim_MOT_A = Timer
         
         ## @brief  Motor object
@@ -57,10 +66,13 @@ class Task_Motor_Controller:
          
          while True:
              
+             ## @brief  Encoder position reading, accounting for 
              true_position = float(self.encoder_share.get())
+             ## @brief  Difference between measured and setpoint values
              self.calc_error = self.controller.run(true_position)
              self.motor.set_duty_cycle(float(self.calc_error))
-
+             
+             ## @brief  Timing variable for tracking the current time.
              self.current_time = utime.ticks_diff(utime.ticks_ms(), self.start_time)
              
              #if utime.ticks_diff(self.current_time,self.record_time) >=0: 
@@ -77,7 +89,8 @@ class Task_Motor_Controller:
          '''! @brief    Prints time and position data for plotting.
          '''
          for k in range(len(self.time_list)):
-
+             
+             ## @brief  Time stamps for plotting
              self.time = utime.ticks_diff(self.time_list[k], self.time_list[0])
              print(self.time  ,',', self.position_list[k])
 

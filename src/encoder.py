@@ -30,7 +30,7 @@ class EncoderDriver:
         ## @brief   Encoder pin object for second timer channel.
         self.enc2_pin = enc2_pin
 
-        # Encoder timer object
+        ## @brief   Timer object for program timing. 
         self.timer = timer
 
         # Encoder timer channel setup

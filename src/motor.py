@@ -23,8 +23,6 @@ class MotorDriver:
              @param  in1_pin     Microcontroller control pin object "1".
              @param  in2_pin     Microcontroller control pin object "2".
              @param  timer       Motor timer object of specified frequency.
-             @param  tim_ch1     Channel object "1" for motor timer.
-             @param  tim_ch2     Channel object "2" for motor timer.
         '''
         
         ## @brief Enable pin object
@@ -33,10 +31,13 @@ class MotorDriver:
 
         #  Define MCU control pins objects IN1 and IN2 that will directly 
         #  control output pins OUT1 and OUT2, connected to the motor.
-        self.in1_pin = in1_pin
-        self.in2_pin = in2_pin
 
-        # Motor timer object for motor
+        ## @brief   Microcontroller control pin object "1".
+        self.in1_pin = in1_pin
+        ## @brief   Microcontroller control pin object "2".
+        self.in2_pin = in2_pin
+        
+        ## @brief   Motor timer object of specified frequency.
         self.timer = timer
         
         # Motor timer channels configured in PWM mode (active high).

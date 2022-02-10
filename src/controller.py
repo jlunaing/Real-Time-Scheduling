@@ -18,17 +18,21 @@ class controller:
     '''
     def __init__(self, set_point_share, gain_share):
         '''! @brief  Initializes objects of the EncoderDriver class.
-             @param  setpoint  Chosen motor position value
-             @param  gain      Kp, proportional gain value
-        '''  
+             @param  set_point_share  Share variable for the setpoint value
+             @param  gain_share    Share variable for the Kp gain value
+        '''
+        ## @brief   Chosen motor position value
         self.setpoint = set_point_share
+        ## @brief   Share variable for the Kp gain value
         self.gain_share = gain_share
     
     def run(self, measured):
         '''! @brief Runs closed loop control calculation
              @param measured  measured position value from encoder
         '''
+        ## @brief   Difference between the setpoint and measured
         self.error = float(self.setpoint) - float(measured)
+        ## @brief   Proportional gain value 
         self.gain = float(self.gain_share)
         return (self.error*self.gain)
     

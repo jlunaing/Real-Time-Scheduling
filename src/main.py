@@ -23,44 +23,80 @@ if __name__ == "__main__":
 
     # Define encoder pin objects -------------------------------
     
-    # First encoder
+    # ENCODER 1
+
+    ## First pin object for encoder channel.
     ENC1A_pin_1 = pyb.Pin.cpu.C6
+    ## Second pin object for encoder channel.
     ENC1B_pin_1 = pyb.Pin.cpu.C7
+    ## Timer object for encoder.
     tim_ENC_A_1 = pyb.Timer(8, prescaler = 0, period = 2**16 - 1)
-    # Second encoder
+    
+    # ENCODER 2
+
+    ## First pin object for encoder channel.
     ENC1A_pin_2 = pyb.Pin.cpu.B6
+    ## Second pin object for encoder channel.
     ENC1B_pin_2 = pyb.Pin.cpu.B7
+    ## Timer object for encoder.
     tim_ENC_A_2 = pyb.Timer(4, prescaler = 0, period = 2**16 - 1)
     
     # Define motor pin objects ---------------------------------
     
     # First motor
+
+    ## Enable pin object
     ENA_pin_1 = pyb.Pin(pyb.Pin.cpu.C1, pyb.Pin.OUT_PP)
+    ## First control pin of motor
     In1_pin_1 = pyb.Pin.cpu.A0
+    ## Second control pin of motor
     In2_pin_1 = pyb.Pin.cpu.A1
-    Timer_1   = pyb.Timer(5, freq=20000)
+    ## Timer object for motor with 20-kHz frequency
+    Timer_1   = pyb.Timer(5, freq = 20000)
+
     # Second motor
+
+    ## Enable pin object
     ENA_pin_2 = pyb.Pin(pyb.Pin.cpu.C1, pyb.Pin.OUT_PP)
+    ## First control pin of motor
     In1_pin_2 = pyb.Pin.cpu.B4
+    ## Second control pin of motor
     In2_pin_2 = pyb.Pin.cpu.B5
+    ## Timer object for motor with 20-kHz frequency
     Timer_2   = pyb.Timer(3, freq = 20000)
     
     # Create shared variables
+
+    ## Encoder share variable for encoder 1
     encoder_share_1   = task_share.Share ('h', thread_protect = False, name = "Encoder_Share_1")
+    ## Gain share variable for motor 1
     gain_share_1      = task_share.Share ('f', thread_protect = False, name = "Gain_Share_1")
+    ## Setpoint variable for motor 1
     set_point_share_1 = task_share.Share ('f', thread_protect = False, name = "Set _Point _Share_1")
+    ## Encoder share variable for encoder 2
     encoder_share_2   = task_share.Share ('h', thread_protect = False, name = "Encoder_Share_2")
+    ## Gain share variable for motor 2
     gain_share_2      = task_share.Share ('f', thread_protect = False, name = "Gain_Share_2")
+    ## Setpoint variable for motor 2
     set_point_share_2 = task_share.Share ('f', thread_protect = False, name = "Set_Point_Share_2")
     
     # Tracking values for debugging
+
+    ## Counter variable
     count = 0
+
+    ## Serial input Boolean variable flag
     serial_input = False
     
     # Define task objects
+
+    ## Encoder 1 task object
     task_encoder1 = task_encoder.Task_Encoder(encoder_share_1, ENC1A_pin_1, ENC1B_pin_1, tim_ENC_A_1)
+    ## Encoder 2 task object
     task_encoder2 = task_encoder.Task_Encoder(encoder_share_2, ENC1A_pin_2, ENC1B_pin_2, tim_ENC_A_2) 
+    ## Motor Controller 1 task object
     task_motor_controller1 = task_motor_controller.Task_Motor_Controller(encoder_share_1, gain_share_1, set_point_share_1, ENA_pin_1, In1_pin_1, In2_pin_1, Timer_1)
+    ## Motor Controller 2 task object
     task_motor_controller2 = task_motor_controller.Task_Motor_Controller(encoder_share_2, gain_share_2, set_point_share_2, ENA_pin_2, In1_pin_2, In2_pin_2, Timer_2)    
          
     task_enc1 = cotask.Task (task_encoder1.run, name = 'Task_Encoder', priority = 2, 

@@ -22,6 +22,7 @@ class Task_Encoder:
              @param  ENC1B_pin    Second pin object for encoder channel.
              @param  tim_ENC_A   Timer object for encoder.
         ''' 
+        ## @brief   Share variable storing encoder value.
         self.encoder_share = encoder_share
         ## @brief   Encoder object
         self.encoder = encoder.EncoderDriver(ENC1A_pin, ENC1B_pin, tim_ENC_A)
