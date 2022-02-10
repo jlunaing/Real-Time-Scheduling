@@ -1,6 +1,6 @@
 '''!    @file    task_motor_controller.py
         @brief   Runs the motor and controller together  
-        @details 
+        @details Combined motor and controller task.
         @author  Marcus Monroe
         @author  Cade Liberty
         @author  Juan Luna
