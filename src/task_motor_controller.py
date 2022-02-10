@@ -1,10 +1,10 @@
-''' @file    task_motor_controller.py
-    @brief   Runs the motor and controller together  
-    @details 
-    @author  Marcus Monroe
-    @author  Cade Liberty
-    @author  Juan Luna
-    @date    January 31, 2022
+'''!    @file    task_motor_controller.py
+        @brief   Runs the motor and controller together  
+        @details 
+        @author  Marcus Monroe
+        @author  Cade Liberty
+        @author  Juan Luna
+        @date    February 10, 2022
 '''
 import controller
 import motor
@@ -14,9 +14,20 @@ import array
 
 class Task_Motor_Controller:
      def __init__(self, encoder_share, gain_share, set_point_share, ENA_pin, In1_pin, In2_pin, Timer):         
-         ''' @brief Sets
-             @param  encoder_share  Passes the present valeu from the encoder
-             @param  motor_share    Shared variable to set new duty cycle
+         '''! @brief Sets
+              @param  encoder_share  Passes the present value from the encoder
+              @param  gain_share    Share variable for proportional gain value.
+              @param  set_point_share   Share variable for setpoint value.
+              @param  controller    Controller object
+              @param  ENA            Enable pin object for the motor.
+              @param  IN1A_pin       Control pin 1 associated with motor.
+              @param  IN2A_pin       Control pin 2 associated with motor.
+              @param  tim_MOT_A      Timer object for motor.
+              @param  motor         Motor object.
+              @param  start_time    Timing variable for tracking starting time.
+              @param  record_time   Timing variable for recording time.
+              @param  time_list     Array of time data point values for plotting.
+              @param  position_list Array of position values for plotting.
          '''
          # Define share variables
          self.encoder_share = encoder_share
@@ -42,7 +53,7 @@ class Task_Motor_Controller:
          self.position_list = array.array('f', [1000]*0)
         
      def run(self):
-         ''' @brief Runs the controller task and sets new duty cycle 
+         '''! @brief Runs the controller task and sets new duty cycle 
          '''
          
          while True:
@@ -70,6 +81,8 @@ class Task_Motor_Controller:
              yield (0)
              
      def prints(self):
+         '''! @brief    Prints time and position data for plotting.
+         '''
                   
          for k in range(len(self.time_list)):
              

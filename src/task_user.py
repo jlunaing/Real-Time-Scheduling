@@ -12,18 +12,25 @@ import time
 COM_num = "COM6"       
         
 def send(command):
-
+    '''!    @brief  Sends the proportional gain value over serial.
+    '''
     port.write((command+"\r\n").encode('utf-8'))
         
 def read():
+    '''!    @brief  Reads data from the serial port sent by the Nucleo.
+    '''
     data = port.readline().decode('utf-8')
                 
 if __name__ == '__main__':
-    
+    ## Boolean variable for triggering plotting of the data.
     print_flag = False
+    ## Boolean variable that tells program whether Kp is already sent over serial.
     Kp_flag = False
+    ## Boolean variable that tells program if recording has started.
     record_flag = False
+    ## List of time stamps for each encoder reading value.
     time_list = []
+    ## List of encoder position values in step response.
     position = []
 
     with serial.Serial(str(COM_num), 115200) as port:
@@ -55,15 +62,13 @@ if __name__ == '__main__':
                     
                     if (time.time()- start_time) > 2:
                         print_flag = True
-                        
-                       
-                
+                                 
             elif print_flag == True:
-                print('Im printing a plot')
+                print('Printing a plot...')
                 time_list.pop(-1)
                 fig, ax = plt.subplots()
 
-                # Scatter plot of first and second columns of CSV data.
+                # Scatter plot of time and position data.
                 ax.scatter(time_list, position)
 
                 # Plot labels: title, x-label, and y-label
@@ -73,7 +78,7 @@ if __name__ == '__main__':
                     
                 # Display the figure
                 plt.show()
-                plt.savefig("response1.png")
+
                 print_flag = False
                 
             
