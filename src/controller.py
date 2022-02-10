@@ -16,21 +16,20 @@ class controller:
                     responsible for calculating the actuation value to be
                     sent to the motor for closed-loop control.
     '''
-    def __init__(self, setpoint, gain_share):
+    def __init__(self, set_point_share, gain_share):
         '''! @brief  Initializes objects of the EncoderDriver class.
              @param  setpoint  Chosen motor position value
              @param  gain      Kp, proportional gain value
         '''  
-        self.setpoint = setpoint.get()
+        self.setpoint = set_point_share
         self.gain_share = gain_share
     
     def run(self, measured):
         '''! @brief Runs closed loop control calculation
              @param measured  measured position value from encoder
         '''
-        print('Measured: ', measured)
         self.error = float(self.setpoint) - float(measured)
-        self.gain = float(self.gain_share.get())
+        self.gain = float(self.gain_share)
         return (self.error*self.gain)
     
     def setpoint(self, setpoint):        
@@ -44,4 +43,3 @@ class controller:
              @param gain  Kp value, the proportional gain
         '''
         self.gain = gain
-    

@@ -15,16 +15,17 @@ class Task_Encoder:
     '''! @brief     Task implementing functionality of encoder driver.
     '''
     
-    def __init__(self, encoder_share,ENC1A_pin,ENC1B_pin,tim_ENC_A):
+    def __init__(self, encoder_share, ENC1A_pin, ENC1B_pin, tim_ENC_A):
         '''! @brief      Initializes objects of the Task_Encoder class.
              @param  encoder_share  Share variable storing encoder value.
              @param  ENC1A_pin    First pin object for encoder channel.
              @param  ENC1B_pin    Second pin object for encoder channel.
              @param  tim_ENC_A   Timer object for encoder.
-        '''  
+        ''' 
         self.encoder_share = encoder_share
         ## @brief   Encoder object
         self.encoder = encoder.EncoderDriver(ENC1A_pin, ENC1B_pin, tim_ENC_A)
+        
         
     def run(self):
         '''! @brief Runs the encoder driver and position to share variable

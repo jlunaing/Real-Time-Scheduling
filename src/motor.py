@@ -1,4 +1,4 @@
-'''!    @file       motor_liberty_luna_monroe.py
+'''!    @file       motor.py
         @brief      A driver for working with a DC motor.
         @details    Encapsulates functionality of DC motor in the form of a 
                     motor driver class. This class sets up pins to control the
@@ -10,7 +10,6 @@
 '''
 
 import pyb
-#import utime
 
 class MotorDriver:
     '''! @brief      A motor driver class for the L6206 motor driver.
@@ -30,7 +29,6 @@ class MotorDriver:
         
         ## @brief Enable pin object
         self.en_pin = en_pin
-        ## @brief Set enable pin high
         self.en_pin.high()
 
         #  Define MCU control pins objects IN1 and IN2 that will directly 

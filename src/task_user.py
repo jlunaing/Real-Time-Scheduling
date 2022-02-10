@@ -1,16 +1,16 @@
 ''' @file    task_user.py
     @brief   Implements a user interface for Lab 03.
-    @author  Marcus Monroe
     @author  Cade Liberty
     @author  Juan Luna
-    @date    January 30, 2022
+    @author  Marcus Monroe
+    @date    February 10, 2022
 '''
 import serial
 import matplotlib.pyplot as plt
 import time
 
 ## @brief   Communication port number for task user
-COM_num = "COM6"       
+COM_num = "COM4"       
         
 def send(command):
     '''!    @brief  Sends the proportional gain value over serial.
@@ -19,11 +19,12 @@ def send(command):
         
 def read():
     '''!    @brief  Reads data from the serial port sent by the Nucleo.
+            @param  data    Variable representing data from serial port
     '''
-    ## @brief   Data from serial port
     data = port.readline().decode('utf-8')
-                
+             
 if __name__ == '__main__':
+    
     ## Boolean variable for triggering plotting of the data.
     print_flag = False
     ## Boolean variable that tells program whether Kp is already sent over serial.
@@ -67,14 +68,12 @@ if __name__ == '__main__':
                     
                     if (time.time()- start_time) > 2:
                         print_flag = True
-                                 
+                           
             elif print_flag == True:
                 print('Printing a plot...')
                 time_list.pop(-1)
 
                 ## @brief   fig     Figure on which plot will be shown.
-
-                ## @brief   ax      Axis for the plot
                 fig, ax = plt.subplots()
 
                 # Scatter plot of time and position data.
@@ -88,7 +87,4 @@ if __name__ == '__main__':
                 # Display the figure
                 plt.show()
 
-                print_flag = False
-                
-            
-                    
+                print_flag = False                    

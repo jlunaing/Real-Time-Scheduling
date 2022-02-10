@@ -1,4 +1,4 @@
-'''!    @file       encoder_liberty_luna_monroe.py
+'''!    @file       encoder.py
         @brief      A driver for working with a quadrature incremental encoder.
         @details    Encapsulates functionality of encoder attached to the motor.
                     This class sets up pins to control the encoder and methods
@@ -13,7 +13,6 @@
 '''
 
 import pyb
-#import utime
 
 class EncoderDriver:
     '''! @brief      Driver class for the quadrature incremental encoder.
