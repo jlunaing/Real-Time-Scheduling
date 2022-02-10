@@ -98,13 +98,17 @@ if __name__ == "__main__":
     task_motor_controller1 = task_motor_controller.Task_Motor_Controller(encoder_share_1, gain_share_1, set_point_share_1, ENA_pin_1, In1_pin_1, In2_pin_1, Timer_1)
     ## Motor Controller 2 task object
     task_motor_controller2 = task_motor_controller.Task_Motor_Controller(encoder_share_2, gain_share_2, set_point_share_2, ENA_pin_2, In1_pin_2, In2_pin_2, Timer_2)    
-         
+
+    ## Encoder 1 task object from cotask module     
     task_enc1 = cotask.Task (task_encoder1.run, name = 'Task_Encoder', priority = 2, 
                         period = 1, profile = True, trace = False)
+    ## Encoder 2 task object from cotask module 
     task_enc2 = cotask.Task (task_encoder2.run, name = 'Task_Encoder', priority = 2, 
                         period = 1, profile = True, trace = False)
+    ## Motor 1 task object from cotask module 
     task_mot1 = cotask.Task (task_motor_controller1.run, name = 'Task_Controller', priority = 2, 
                         period = 5, profile = True, trace = False)
+    ## Motor 2 task object from cotask module 
     task_mot2 = cotask.Task (task_motor_controller2.run, name = 'Task_Controller', priority = 2, 
                         period = 5, profile = True, trace = False)
     
@@ -119,14 +123,19 @@ if __name__ == "__main__":
 
     # Run the scheduler with the chosen scheduling algorithm. Quit if any 
     # character is received through the serial port
+    ## Virtual COM port object
     vcp = pyb.USB_VCP ()
     
     while True:
         
         if serial_input == False:
+            ## First setpoint
             setpoint1 = input()
+            ## First proportional gain
             kp1 = input()
+            ## Second setpoint
             setpoint2 = input()
+            ## Second proportional gain
             kp2 = input()
             
             set_point_share_1.put(float(setpoint1))

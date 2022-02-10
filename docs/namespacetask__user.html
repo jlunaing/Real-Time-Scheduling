@@ -76,15 +76,14 @@ Functions</h2></td></tr>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>send</b> (command)</td></tr>
 <tr class="memdesc:a7ac62939ce970b5cd110e28e8f535472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the proportional gain value over serial. <br /></td></tr>
 <tr class="separator:a7ac62939ce970b5cd110e28e8f535472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e668b593dcf4bb99a950ad0b26aaec3"><td class="memItemLeft" align="right" valign="top"><a id="a4e668b593dcf4bb99a950ad0b26aaec3" name="a4e668b593dcf4bb99a950ad0b26aaec3"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> ()</td></tr>
-<tr class="memdesc:a4e668b593dcf4bb99a950ad0b26aaec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the serial port sent by the Nucleo. <br /></td></tr>
+<tr class="memitem:a4e668b593dcf4bb99a950ad0b26aaec3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetask__user.html#a4e668b593dcf4bb99a950ad0b26aaec3">read</a> ()</td></tr>
+<tr class="memdesc:a4e668b593dcf4bb99a950ad0b26aaec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the serial port sent by the Nucleo.  <a href="namespacetask__user.html#a4e668b593dcf4bb99a950ad0b26aaec3">More...</a><br /></td></tr>
 <tr class="separator:a4e668b593dcf4bb99a950ad0b26aaec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:aff2e224cdd05b2ef97f2aa7badb51675"><td class="memItemLeft" align="right" valign="top"><a id="aff2e224cdd05b2ef97f2aa7badb51675" name="aff2e224cdd05b2ef97f2aa7badb51675"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>COM_num</b> = &quot;COM6&quot;</td></tr>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>COM_num</b> = &quot;COM4&quot;</td></tr>
 <tr class="memdesc:aff2e224cdd05b2ef97f2aa7badb51675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Communication port number for task user. <br /></td></tr>
 <tr class="separator:aff2e224cdd05b2ef97f2aa7badb51675"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74984bb6b9d8486e9f6d031ddc4e05ab"><td class="memItemLeft" align="right" valign="top"><a id="a74984bb6b9d8486e9f6d031ddc4e05ab" name="a74984bb6b9d8486e9f6d031ddc4e05ab"></a>
@@ -119,8 +118,9 @@ list&#160;</td><td class="memItemRight" valign="bottom"><b>position</b> = []</td
 list&#160;</td><td class="memItemRight" valign="bottom"><b>current_data</b> = [idx for idx in data.replace('r\n', '').split(',')]</td></tr>
 <tr class="memdesc:a5a9dbc57863eaea93959081d5fbf2643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current data from serial port. <br /></td></tr>
 <tr class="separator:a5a9dbc57863eaea93959081d5fbf2643"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2dbb439c4d6a4b74e54324d75bbff64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetask__user.html#ad2dbb439c4d6a4b74e54324d75bbff64">fig</a></td></tr>
-<tr class="memdesc:ad2dbb439c4d6a4b74e54324d75bbff64"><td class="mdescLeft">&#160;</td><td class="mdescRight">fig Figure on which plot will be shown.  <a href="namespacetask__user.html#ad2dbb439c4d6a4b74e54324d75bbff64">More...</a><br /></td></tr>
+<tr class="memitem:ad2dbb439c4d6a4b74e54324d75bbff64"><td class="memItemLeft" align="right" valign="top"><a id="ad2dbb439c4d6a4b74e54324d75bbff64" name="ad2dbb439c4d6a4b74e54324d75bbff64"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>fig</b></td></tr>
+<tr class="memdesc:ad2dbb439c4d6a4b74e54324d75bbff64"><td class="mdescLeft">&#160;</td><td class="mdescRight">fig Figure on which plot will be shown. <br /></td></tr>
 <tr class="separator:ad2dbb439c4d6a4b74e54324d75bbff64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f49aaf3c3af26d56b69846f4cd08c0a"><td class="memItemLeft" align="right" valign="top"><a id="a0f49aaf3c3af26d56b69846f4cd08c0a" name="a0f49aaf3c3af26d56b69846f4cd08c0a"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ax</b></td></tr>
@@ -129,25 +129,33 @@ list&#160;</td><td class="memItemRight" valign="bottom"><b>current_data</b> = [i
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment"> @file    task_user.py
     @brief   Implements a user interface for Lab 03.
-    @author  Marcus Monroe
     @author  Cade Liberty
     @author  Juan Luna
-    @date    January 30, 2022
-</pre> </div><h2 class="groupheader">Variable Documentation</h2>
-<a id="ad2dbb439c4d6a4b74e54324d75bbff64" name="ad2dbb439c4d6a4b74e54324d75bbff64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2dbb439c4d6a4b74e54324d75bbff64">&#9670;&nbsp;</a></span>fig</h2>
+    @author  Marcus Monroe
+    @date    February 10, 2022
+</pre> </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a4e668b593dcf4bb99a950ad0b26aaec3" name="a4e668b593dcf4bb99a950ad0b26aaec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e668b593dcf4bb99a950ad0b26aaec3">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">task_user.fig</td>
+          <td class="memname">def task_user.read </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>fig Figure on which plot will be shown. </p>
-<p >ax Axis for the plot </p>
+<p>Reads data from the serial port sent by the Nucleo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Variable representing data from serial port </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

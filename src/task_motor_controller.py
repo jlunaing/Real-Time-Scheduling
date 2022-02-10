@@ -14,6 +14,8 @@ import print_task
 import array
 
 class Task_Motor_Controller:
+    '''! @brief     Task motor controller class.
+    '''
      def __init__(self, encoder_share, gain_share, set_point_share, ENA_pin, In1_pin, In2_pin, Timer):
         '''! @brief    Instantiates objects of the Task_Motor_Controller class.
              @param  encoder_share  Passes the present value from the encoder

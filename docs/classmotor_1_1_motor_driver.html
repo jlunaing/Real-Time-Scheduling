@@ -80,7 +80,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4e94f8684f1cb47672086706dfb081bc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotor_1_1_motor_driver.html#a4e94f8684f1cb47672086706dfb081bc">__init__</a> (self, <a class="el" href="classmotor_1_1_motor_driver.html#a56afcaf2ed302218f0040f196b098200">en_pin</a>, <a class="el" href="classmotor_1_1_motor_driver.html#a869991ef0c08fc12183637d32e6000db">in1_pin</a>, in2_pin, timer)</td></tr>
+<tr class="memitem:a4e94f8684f1cb47672086706dfb081bc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotor_1_1_motor_driver.html#a4e94f8684f1cb47672086706dfb081bc">__init__</a> (self, <a class="el" href="classmotor_1_1_motor_driver.html#a56afcaf2ed302218f0040f196b098200">en_pin</a>, <a class="el" href="classmotor_1_1_motor_driver.html#a869991ef0c08fc12183637d32e6000db">in1_pin</a>, <a class="el" href="classmotor_1_1_motor_driver.html#a72247617bde0ba20d0992e696cb79372">in2_pin</a>, <a class="el" href="classmotor_1_1_motor_driver.html#a41b9136956046016568e7d9f1c957e4f">timer</a>)</td></tr>
 <tr class="memdesc:a4e94f8684f1cb47672086706dfb081bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes objects of the <a class="el" href="classmotor_1_1_motor_driver.html" title="A motor driver class for the L6206 motor driver.">MotorDriver</a> class.  <a href="classmotor_1_1_motor_driver.html#a4e94f8684f1cb47672086706dfb081bc">More...</a><br /></td></tr>
 <tr class="separator:a4e94f8684f1cb47672086706dfb081bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a106e66d42da14f0957985a36a3d4af37"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotor_1_1_motor_driver.html#a106e66d42da14f0957985a36a3d4af37">set_duty_cycle</a> (self, duty)</td></tr>
@@ -95,13 +95,15 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a56afcaf2ed302218f0040f196b098200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a869991ef0c08fc12183637d32e6000db"><td class="memItemLeft" align="right" valign="top"><a id="a869991ef0c08fc12183637d32e6000db" name="a869991ef0c08fc12183637d32e6000db"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>in1_pin</b></td></tr>
-<tr class="memdesc:a869991ef0c08fc12183637d32e6000db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set enable pin high. <br /></td></tr>
+<tr class="memdesc:a869991ef0c08fc12183637d32e6000db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Microcontroller control pin object "1". <br /></td></tr>
 <tr class="separator:a869991ef0c08fc12183637d32e6000db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72247617bde0ba20d0992e696cb79372"><td class="memItemLeft" align="right" valign="top"><a id="a72247617bde0ba20d0992e696cb79372" name="a72247617bde0ba20d0992e696cb79372"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>in2_pin</b></td></tr>
+<tr class="memdesc:a72247617bde0ba20d0992e696cb79372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Microcontroller control pin object "2". <br /></td></tr>
 <tr class="separator:a72247617bde0ba20d0992e696cb79372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41b9136956046016568e7d9f1c957e4f"><td class="memItemLeft" align="right" valign="top"><a id="a41b9136956046016568e7d9f1c957e4f" name="a41b9136956046016568e7d9f1c957e4f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>timer</b></td></tr>
+<tr class="memdesc:a41b9136956046016568e7d9f1c957e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Motor timer object of specified frequency. <br /></td></tr>
 <tr class="separator:a41b9136956046016568e7d9f1c957e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6943dea456425827d8043778a8ddebd9"><td class="memItemLeft" align="right" valign="top"><a id="a6943dea456425827d8043778a8ddebd9" name="a6943dea456425827d8043778a8ddebd9"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>tim_ch1</b></td></tr>
@@ -167,8 +169,6 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">in1_pin</td><td>Microcontroller control pin object "1". </td></tr>
     <tr><td class="paramname">in2_pin</td><td>Microcontroller control pin object "2". </td></tr>
     <tr><td class="paramname">timer</td><td>Motor timer object of specified frequency. </td></tr>
-    <tr><td class="paramname">tim_ch1</td><td>Channel object "1" for motor timer. </td></tr>
-    <tr><td class="paramname">tim_ch2</td><td>Channel object "2" for motor timer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -214,7 +214,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/motor.py</li>
+<li>src/<a class="el" href="motor_8py.html">motor.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
