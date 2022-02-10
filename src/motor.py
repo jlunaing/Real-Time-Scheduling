@@ -28,9 +28,9 @@ class MotorDriver:
              @param  tim_ch2     Channel object "2" for motor timer.
         '''
         
-        # Enable pin object
+        ## @brief Enable pin object
         self.en_pin = en_pin
-        # Set enable pin high
+        ## @brief Set enable pin high
         self.en_pin.high()
 
         #  Define MCU control pins objects IN1 and IN2 that will directly 
@@ -42,8 +42,11 @@ class MotorDriver:
         self.timer = timer
         
         # Motor timer channels configured in PWM mode (active high).
+
+        ## @brief   Channel object "1" for motor timer.
         self.tim_ch1 = self.timer.channel(1, mode = pyb.Timer.PWM, 
                                               pin = self.in1_pin)
+        ## @brief   Channel object "2" for motor timer.
         self.tim_ch2 = self.timer.channel(2, mode = pyb.Timer.PWM, 
                                               pin = self.in2_pin)
 

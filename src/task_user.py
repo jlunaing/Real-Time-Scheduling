@@ -9,6 +9,7 @@ import serial
 import matplotlib.pyplot as plt
 import time
 
+## @brief   Communication port number for task user
 COM_num = "COM6"       
         
 def send(command):
@@ -19,6 +20,7 @@ def send(command):
 def read():
     '''!    @brief  Reads data from the serial port sent by the Nucleo.
     '''
+    ## @brief   Data from serial port
     data = port.readline().decode('utf-8')
                 
 if __name__ == '__main__':
@@ -48,11 +50,14 @@ if __name__ == '__main__':
                     send(input())
                     
                     Kp_flag = True
+                    ## @brief   Timing variable keeping track of starting time.
                     start_time = time.time()
                 else:
 
                     try:
+                        ## @brief   Data from serial port
                         data = port.readline().decode('utf-8')
+                        ## @brief   Current data from serial port
                         current_data = [idx for idx in data.replace('r\n', '').split(',')]
                         
                         time_list.append(float(current_data[0]))
@@ -66,6 +71,10 @@ if __name__ == '__main__':
             elif print_flag == True:
                 print('Printing a plot...')
                 time_list.pop(-1)
+
+                ## @brief   fig     Figure on which plot will be shown.
+
+                ## @brief   ax      Axis for the plot
                 fig, ax = plt.subplots()
 
                 # Scatter plot of time and position data.

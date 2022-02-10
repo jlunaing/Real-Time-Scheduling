@@ -26,8 +26,9 @@ class EncoderDriver:
              @param  enc2_pin    Encoder pin object for second timer channel.
              @param  timer       Timer object for program timing.  
         '''     
-        # Encoder pin objects for two channels
+        ## @brief   Encoder pin object for first timer channel.
         self.enc1_pin = enc1_pin
+        ## @brief   Encoder pin object for second timer channel.
         self.enc2_pin = enc2_pin
 
         # Encoder timer object

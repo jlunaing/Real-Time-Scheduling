@@ -14,27 +14,21 @@ import array
 
 class Task_Motor_Controller:
      def __init__(self, encoder_share, gain_share, set_point_share, ENA_pin, In1_pin, In2_pin, Timer):         
-         '''! @brief Sets
+         '''! @brief    Instantiates objects of the Task_Motor_Controller class.
               @param  encoder_share  Passes the present value from the encoder
               @param  gain_share    Share variable for proportional gain value.
               @param  set_point_share   Share variable for setpoint value.
-              @param  controller    Controller object
-              @param  ENA            Enable pin object for the motor.
-              @param  IN1A_pin       Control pin 1 associated with motor.
-              @param  IN2A_pin       Control pin 2 associated with motor.
-              @param  tim_MOT_A      Timer object for motor.
-              @param  motor         Motor object.
-              @param  start_time    Timing variable for tracking starting time.
-              @param  record_time   Timing variable for recording time.
-              @param  time_list     Array of time data point values for plotting.
-              @param  position_list Array of position values for plotting.
+              @param  ENA_pin            Enable pin object for the motor.
+              @param  In1A_pin       Control pin 1 associated with motor.
+              @param  In2A_pin       Control pin 2 associated with motor.
+              @param  Timer          Timer object for motor.
          '''
          # Define share variables
          self.encoder_share = encoder_share
          self.gain_share = gain_share
          self.set_point_share = set_point_share
          
-         # Define controller
+         ## @brief  Controller object
          self.controller = controller.controller(self.set_point_share, self.gain_share)
         
          # Define motor-related pin objects
@@ -43,13 +37,18 @@ class Task_Motor_Controller:
          self.IN2A_pin = In2_pin
          self.tim_MOT_A = Timer
         
-         # Define motor object
+         ## @brief  Motor object
          self.motor = motor.MotorDriver(self.ENA, self.IN1A_pin, self.IN2A_pin, self.tim_MOT_A)
          
+         ## @brief  Timing variable for tracking starting time.
          self.start_time = utime.ticks_ms()
+         ## @brief  Timing variable for recording time.
          self.record_time = self.start_time
+         ## @brief  Timing variabe for recording period.
          self.record_period = 20
+         ## @brief  Array of time data point values for plotting.
          self.time_list = array.array('i', [1000]*0)
+         ## @brief  Array of position values for plotting.
          self.position_list = array.array('f', [1000]*0)
         
      def run(self):
