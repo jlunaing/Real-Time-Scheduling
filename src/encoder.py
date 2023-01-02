@@ -6,10 +6,9 @@
                     in units of "ticks". Position reading is based on an 
                     algorithm that accounts for overflow and underflow.
  
-        @author     Cade Liberty
         @author     Juan Luna
-        @author     Marcus Monroe
-        @date       January 26, 2022
+        @date       2022-01-26 Original file
+        @date       2022-12-30 Modified for portfolio update
 '''
 
 import pyb

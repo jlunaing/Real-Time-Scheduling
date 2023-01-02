@@ -1,11 +1,11 @@
-'''!    @file    task_motor_controller.py
-        @brief   Runs the motor and controller tasks together.  
-        @details Implements closed-loop position control on a motor
-                 using a task defined as a generator.
-        @author  Cade Liberty
-        @author  Juan Luna
-        @author  Marcus Monroe
-        @date    February 10, 2022
+'''!    @file       task_motor_controller.py
+        @brief      Runs the motor and controller tasks together.  
+        @details    Implements closed-loop position control on a motor
+                    using a task defined as a generator.
+
+        @author     Juan Luna
+        @date       2022-02-10 Original file
+        @date       2022-12-30 Modified for portfolio update
 '''
 import controller
 import motor

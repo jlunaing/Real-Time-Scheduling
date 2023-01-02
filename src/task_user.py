@@ -1,9 +1,9 @@
-''' @file    task_user.py
-    @brief   Implements a user interface for Lab 03.
-    @author  Cade Liberty
-    @author  Juan Luna
-    @author  Marcus Monroe
-    @date    February 10, 2022
+'''!    @file       task_user.py
+        @brief      Implements a user interface for Project 0x13.
+
+        @author     Juan Luna
+        @date       2022-02-10 Original file
+        @date       2022-12-30 Modified for portfolio update
 '''
 import serial
 import matplotlib.pyplot as plt

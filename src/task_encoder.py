@@ -2,10 +2,10 @@
         @brief   Runs the encoder driver to receive current encoder position
         @details Establishes encoder pin values and runs encoder frequently 
                  to provide measured values to closed loop gain.
-        @author  Cade Liberty
-        @author  Juan Luna
-        @author  Marcus Monroe
-        @date    February 10, 2022
+
+        @author     Juan Luna
+        @date       2022-02-10 Original file
+        @date       2022-12-30 Modified for portfolio update
 '''
 import utime
 import pyb

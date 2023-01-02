@@ -3,10 +3,10 @@
         @details    Encapsulates functionality of DC motor in the form of a 
                     motor driver class. This class sets up pins to control the
                     motor and sets the duty cycle and direction of the motor. 
-        @author     Cade Liberty
+
         @author     Juan Luna
-        @author     Marcus Monroe
-        @date       January 26, 2022
+        @date       2022-01-26 Original file
+        @date       2022-12-30 Modified for portfolio update
 '''
 
 import pyb

@@ -1,15 +1,14 @@
 """!
-@file main.py
-    This file contains a demonstration program that runs some tasks, an
-    inter-task shared variable, and a queue. The tasks don't really @b do
-    anything; the example just shows how these elements are created and run.
+@file       main.py
+    Imports modules responsible for executing tasks implementing closed-loop 
+    position control on a DC motor. Cooperative multi-tasking is used to run 
+    tasks sequentially and share resources. This time, we integrated the code 
+    developed previously in Project 0x12 into a real-time scheduler and tested 
+    its performance.
 
-@author Cade Liberty
-@author Juan Luna
-@author Marcus Monroe
-@date   2021-Dec-15 JRR Created from the remains of previous example
-@copyright (c) 2015-2021 by JR Ridgely and released under the GNU
-    Public License, Version 2. 
+@author     Juan Luna
+@date       2022-02-10 Original file
+@date       2022-12-30 Modified for portfolio update
 """
 
 import gc
