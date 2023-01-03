@@ -8,25 +8,25 @@
     <img src="https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_1.png?raw=true" alt="Step response with Kp = 0.3, period = 10 ms"/>
  </p>
  
- <p align="center">Motor step response with a proportional gain value of **Kp = 0.3** and with its motor control task running at a period of **10 ms**.</p><br/>
+ <p align="center">Motor step response with a proportional gain value of <b>Kp = 0.3</b> and with its motor control task running at a period of <b>10 ms</b>.</p><br/>
  
  <p align="center">
     <img src="https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_2.png?raw=true" alt="Step response with Kp = 0.3, period = 20 ms"/>
  </p>
  
- <p align="center">Motor step response with a proportional gain value of **Kp = 0.3** and with its motor control task running at a period of **20 ms**.</p><br/>
+ <p align="center">Motor step response with a proportional gain value of <b>Kp = 0.3</b> and with its motor control task running at a period of <b>20 ms</b>.</p><br/>
 
  <p align="center">
     <img src="https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_3.png?raw=true" alt="Step response with Kp = 0.3, period = 40 ms"/>
  </p>
  
- <p align="center">Motor step response with a proportional gain value of **Kp = 0.3** and with its motor control task running at a period of **40 ms**.</p><br/>
+ <p align="center">Motor step response with a proportional gain value of <b>Kp = 0.3</b> and with its motor control task running at a period of <b>40 ms</b>.</p><br/>
 
  <p align="center">
     <img src="https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_4.png?raw=true" alt="Step response with Kp = 0.3, period = 60 ms"/>
  </p>
  
- <p align="center">Motor step response with a proportional gain value of **Kp = 0.3** and with its motor control task running at a period of **60 ms**.</p><br/>
+ <p align="center">Motor step response with a proportional gain value of <b>Kp = 0.3</b> and with its motor control task running at a period of <b>60 ms</b>.</p><br/>
  
  The plots indicate that, at around a 80-ms period, the response is still relatively the same. Ideally, we would have shown further plots at higher periods that displayed different responses showing a less accurate controller. Above 50 ms, our code breaks and will not record data. After two hours of trouble-shooting this problem, we are still unsure of why this large period causes an error in the data collection. However, with this, we can still conclude that the large periods causes undesirable effects in our system. 
 
