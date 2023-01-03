@@ -4,19 +4,27 @@
  
  First, the controller algorithm was executed at a 10-ms period, with a proportional gain value of 0.03. Then, we gradually increased the period to watch for changes in the step response plot. The step response plots for the various gain values are shown below.
  
- ![Step response with Kp = 0.3, period = 10 ms](https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_1.png?raw=true)
+ <p align="center">
+    <img src="https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_1.png?raw=true" alt="Step response with Kp = 0.3, period = 10 ms"/>
+ </p>
  
  <p align="center">Motor step response with a proportional gain value of **Kp = 0.3** and with its motor control task running at a period of **10 ms**.</p><br/>
  
- ![Step response with Kp = 0.3, period = 20 ms](https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_2.png?raw=true)
+ <p align="center">
+    <img src="https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_2.png?raw=true" alt="Step response with Kp = 0.3, period = 20 ms"/>
+ </p>
  
  <p align="center">Motor step response with a proportional gain value of **Kp = 0.3** and with its motor control task running at a period of **20 ms**.</p><br/>
- 
- ![Step response with Kp = 0.3, period = 40 ms](https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_3.png?raw=true)
+
+ <p align="center">
+    <img src="https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_3.png?raw=true" alt="Step response with Kp = 0.3, period = 40 ms"/>
+ </p>
  
  <p align="center">Motor step response with a proportional gain value of **Kp = 0.3** and with its motor control task running at a period of **40 ms**.</p><br/>
 
-![Step response with Kp = 0.3, period = 60 ms](https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_4.png?raw=true)
+ <p align="center">
+    <img src="https://github.com/jdlu97/Real-Time-Scheduling/blob/main/img/figure_4.png?raw=true" alt="Step response with Kp = 0.3, period = 60 ms"/>
+ </p>
  
  <p align="center">Motor step response with a proportional gain value of **Kp = 0.3** and with its motor control task running at a period of **60 ms**.</p><br/>
  
